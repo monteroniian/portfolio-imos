@@ -1316,7 +1316,34 @@ function renderProjects() {
   renderProjectDetail(current);
 }
 
+const ET5_LIVE = 'https://ian-et5-proyectos.onrender.com';
+
+const LIVE_URLS = {
+  'portfolio-imos': 'https://ian-monteroni-portfolio.onrender.com',
+  'figma-turismo': 'https://www.figma.com/make/c8H3DVMeDtP9DfVZ3THq1g/Empresa-de-paquetes-turisticos?fullscreen=1&t=PfrisSky049ngLH6-1&code-node-id=0-9',
+  'gta3d': 'https://ian-gta-san-andreas-3d.onrender.com',
+  'plan-negocios': 'https://ian-plan-de-negocios.onrender.com',
+  'comercial-fym': `${ET5_LIVE}/comercial-fym-2026/`,
+  'planet-gym': `${ET5_LIVE}/planet-gym-demo-2026/`,
+  'club-natacion': `${ET5_LIVE}/club-natacion-smi/`,
+  'cronometraje-esp32': `${ET5_LIVE}/cronometraje-esp32/`,
+  'juego-filosofia': `${ET5_LIVE}/juego-real-vs-ia/`,
+  'dilema-redes': `${ET5_LIVE}/dilema-de-redes/`,
+  'marketing-js': `${ET5_LIVE}/marketing-juan-vs-sofia/`,
+  'mis-notas': `${ET5_LIVE}/mis-notas-bd/`,
+  'monteroni-3d': `${ET5_LIVE}/monteroni-3d/`,
+  'delta-gym': `${ET5_LIVE}/gimnasio-delta-demo-2026/`,
+  'fragancias-nvg': `${ET5_LIVE}/fragancias-nvg/`,
+  'no-limits-park': `${ET5_LIVE}/no-limits-park/`,
+  'cookie-shop': `${ET5_LIVE}/cookie-shop/`,
+  'youtube-hits': `${ET5_LIVE}/random-youtube-hits/`,
+  'sucesor-waystar': `${ET5_LIVE}/sucesor-waystar-royco/`,
+  'ciberseguridad': `${ET5_LIVE}/ciberseguridad-et5/peligros-wifi-publico.html`,
+  'impresion-3d-cat': `${ET5_LIVE}/impresion-3d-catalogo/`
+};
+
 function renderProjectDetail(p) {
+  const liveUrl = p.liveUrl || LIVE_URLS[p.id];
   projDetailEl.innerHTML = `
     <div class="pd-banner" style="--b1:${p.b1};--b2:${p.b2}">
       <div class="pd-banner-top">
@@ -1343,9 +1370,10 @@ function renderProjectDetail(p) {
     <div class="pd-tags">${p.tags.map(t => `<span>${t}</span>`).join('')}</div>
 
     <div class="pd-actions">
-      <a href="${p.repo}" target="_blank" class="btn-primary">
-        <i class="${p.btnIcon || 'fa-brands fa-github'}"></i> ${p.btnLabel || 'Ver código en GitHub'}
-      </a>
+      <div class="pd-action-btns">
+        ${liveUrl ? `<a href="${liveUrl}" target="_blank" rel="noopener" class="btn-live"><i class="fa-solid fa-arrow-up-right-from-square"></i> Ver proyecto funcionando</a>` : ''}
+        ${(!liveUrl || liveUrl !== p.repo) ? `<a href="${p.repo}" target="_blank" rel="noopener" class="btn-primary"><i class="${p.btnIcon || 'fa-brands fa-github'}"></i> ${p.btnLabel || 'Ver código en GitHub'}</a>` : ''}
+      </div>
       <span class="btn-ghost">${p.repoLabel}</span>
     </div>
   `;

@@ -766,11 +766,18 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 8px;
-  padding-top: 4px;
+  padding-top: 6px;
   border-top: 1px solid var(--border);
 }
-.btn-primary, .btn-ghost {
+.pd-action-btns {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.btn-primary, .btn-live, .btn-ghost {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -782,6 +789,12 @@ html, body {
   cursor: pointer;
   transition: 0.15s;
 }
+.btn-live {
+  background: linear-gradient(135deg, #059669, #10b981);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.btn-live:hover { filter: brightness(1.12); transform: translateY(-1px); }
 .btn-primary {
   background: linear-gradient(135deg, #0284c7, #7c3aed);
   color: #fff;
