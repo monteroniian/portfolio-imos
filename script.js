@@ -1316,13 +1316,15 @@ function renderProjects() {
   renderProjectDetail(current);
 }
 
-const ET5_LIVE = 'https://ian-et5-proyectos.onrender.com';
+const ET5_LIVE = 'https://monteroniian.github.io/proyectos-escuela-et5';
 
 const LIVE_URLS = {
   'portfolio-imos': 'https://ian-monteroni-portfolio.onrender.com',
   'figma-turismo': 'https://www.figma.com/make/c8H3DVMeDtP9DfVZ3THq1g/Empresa-de-paquetes-turisticos?fullscreen=1&t=PfrisSky049ngLH6-1&code-node-id=0-9',
-  'gta3d': 'https://ian-gta-san-andreas-3d.onrender.com',
-  'plan-negocios': 'https://ian-plan-de-negocios.onrender.com',
+  'gta3d': 'https://monteroniian.github.io/gta-san-andreas-3d/',
+  'plan-negocios': 'https://monteroniian.github.io/Plan-de-negocios/Plan%20de%20negocios/',
+  'pyme': 'https://monteroniian.github.io/Automatizaci-n-PyME-Sustentable/Trabajo%20final%20(Mariano%20Morioni)/',
+  'el-tito': `${ET5_LIVE}/impresoras-3d-el-tito/Trabajo%20final%20(Mariano%20Morioni)/`,
   'comercial-fym': `${ET5_LIVE}/comercial-fym-2026/`,
   'planet-gym': `${ET5_LIVE}/planet-gym-demo-2026/`,
   'club-natacion': `${ET5_LIVE}/club-natacion-smi/`,
